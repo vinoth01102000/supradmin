@@ -3,6 +3,10 @@ from typing import List
 import django.db
 from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,BaseUserManager
 
+
+from django.contrib.auth.models import User
+
+
 # Create your CustomUserManager here.
 class CustomUserManager(BaseUserManager):
     def _create_user(self, email, password, first_name, last_name, mobile, **extra_fields):
@@ -57,23 +61,3 @@ class User(AbstractBaseUser,PermissionsMixin):
     class Meta:
         verbose_name = 'User'
         verbose_name_plural = 'Users'
-
-#
-# from django.core.management.base import BaseCommand, CommandError
-# from django.contrib.auth.models import User
-#
-#
-# class Command(BaseCommand):
-#
-#     def handle(self, *args, **options):
-#         # The magic line
-#         User.objects.create_user(username='rmx',
-#                                  email='superuser@super.com',
-#                                  password='rmx55',
-#                                  is_staff=True,
-#                                  is_active=True,
-#                                  is_superuser=True
-#                                  )
-
-
-# Create your models here.

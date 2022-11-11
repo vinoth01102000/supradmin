@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'emailapp'
+    'emailapp',
+    'rest_framework',
+    'dj_rest_auth.registration',
 ]
 
 AUTH_USER_MODEL: str = 'emailapp.User'
